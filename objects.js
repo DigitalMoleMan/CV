@@ -16,11 +16,12 @@ class Education {
 }
 
 class Experience {
-	constructor(company, position, timespan, description) {
+	constructor(company, position, timespan, description, references = []) {
 		this.company = company;
 		this.position = position;
 		this.timespan = timespan;
 		this.description = description;
+		this.references = references;
 	}
 }
 
@@ -28,6 +29,14 @@ class Contact {
 	constructor(label, link) {
 		this.label = label;
 		this.link = link;
+	}
+}
+
+class Reference {
+	constructor(name, position, linkedIn) {
+		this.name = name;
+		this.position = position;
+		this.linkedIn = linkedIn;
 	}
 }
 
@@ -72,13 +81,20 @@ var experience = [
 		"Windswept Interactive - Internship",
 		"Programmer",
 		new Timespan("Jan 2022", "Jun 2022"),
-		"Worked on a VR game in Unity."
+		"Worked on a VR game in Unity.",
+		[
+			new Reference("Jakob Olofsson (Mentor)", "Programmer", "https://www.linkedin.com/in/jakob-olofsson/")
+		]
 	),
 	new Experience(
 		"The Fine Arc Nordic AB - Internship",
 		"Programmer",
 		new Timespan("Jun 2021", "Aug 2021"),
-		"A small indie game studio based in Umeå."
+		"A small indie game studio based in Umeå.",
+		[
+			//new Reference("Daniel Olofsson (CEO)", "CEO", "https://www.linkedin.com/in/danielolofsson77/"),
+			//new Reference("Per Fransson (COO)", "COO", "https://www.linkedin.com/in/perfransson/")
+		]
 	)
 ];
 

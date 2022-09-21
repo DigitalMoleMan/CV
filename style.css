@@ -112,3 +112,14 @@ main{
 	display: block;
 	width: 100%;
 }
+
+.item-references{
+	display: block;
+	margin-top: 1rem;
+	margin-bottom: 0rem;
+	width: 100%;
+}
+
+.bright-link{
+	color: #44bdec;
+}

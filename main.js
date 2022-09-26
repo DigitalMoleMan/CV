@@ -61,28 +61,28 @@ function addExperience(experience) {
 		divItem.classList.add("item");
 
 		var referencesHTML = "";
-		if(item.references.length > 0) {
-			
+		if (item.references.length > 0) {
 
-		var divReferences = document.createElement("div");
-		divReferences.classList.add("references");
-		for(i = 0; i < item.references.length; i++) {
-			var reference = item.references[i];
-			var divReference = document.createElement("div");
-			divReference.classList.add("reference");
-			divReference.innerHTML = `
+
+			var divReferences = document.createElement("div");
+			divReferences.classList.add("references");
+			for (i = 0; i < item.references.length; i++) {
+				var reference = item.references[i];
+				var divReference = document.createElement("div");
+				divReference.classList.add("reference");
+				divReference.innerHTML = `
 					<li class="reference-name">${reference.name} - <a class="bright-link" href="${reference.linkedIn}" class="reference-linkedin">LinkedIn</a></li>
 			`;
-			divReferences.appendChild(divReference);
-		};
+				divReferences.appendChild(divReference);
+			};
 
-		referencesHTML = `<label class="item-references">References:</label>` + divReferences.outerHTML;
-	}
+			referencesHTML = `<label class="item-references">References:</label>` + divReferences.outerHTML;
+		}
 
-		
+
 
 		divItem.innerHTML = `
-			<div class="item-timespan">${item.timespan.start} - ${item.timespan.end}</div>
+			<div class="item-timespan">${item.timespan.toString()}</div>
 			<div class="item-content">
 				<h3 class="item-title">${item.company}</h3>
 				<h4 class="item-subtitle">${item.position}</h4>

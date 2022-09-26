@@ -1,8 +1,15 @@
 
 class Timespan {
-	constructor(start, end) {
+	constructor(start, end = "") {
 		this.start = start;
 		this.end = end;
+	}
+
+	toString() {
+		if(this.end == "")
+			return this.start;
+		else
+			return `${this.start} - ${this.end}`;
 	}
 }
 
@@ -75,25 +82,31 @@ var experience = [
 		"Aurora Punks",
 		"Lead Programmer - Iron Evil",
 		new Timespan("Jun 2022", "Present"),
-		"Currently working on a game with a team of 5 people. The game is being developed in Unity."
+		"Currently working on a top-down roguelike game with a team of 5 people. The game is being developed in Unity."
+	),
+	new Experience(
+		"FutureGames Skellefteå",
+		"Substitute Teacher",
+		new Timespan("Sep 2022"),
+		"Held 2 lectures on the subject of shader programming and one lecture on the subject of A* pathfinding. The lectures were held in English."
 	),
 	new Experience(
 		"Windswept Interactive - Internship",
 		"Programmer",
 		new Timespan("Jan 2022", "Jun 2022"),
-		"Worked on a VR game in Unity.",
+		"Worked on 'Ghost Signal: A Stellaris Game', A VR game made in Unity.",
 		[
-			new Reference("Jakob Olofsson (Mentor)", "Programmer", "https://www.linkedin.com/in/jakob-olofsson/")
+			new Reference("Jakob Olofsson (Programmer, Mentor)", "Programmer", "https://www.linkedin.com/in/jakob-olofsson/")
 		]
 	),
 	new Experience(
 		"The Fine Arc Nordic AB - Internship",
 		"Programmer",
 		new Timespan("Jun 2021", "Aug 2021"),
-		"A small indie game studio based in Umeå.",
+		"A small indie game studio based in Umeå. I helped implement character controls for a 2.5D space exploration game made in Unity.",
 		[
 			//new Reference("Daniel Olofsson (CEO)", "CEO", "https://www.linkedin.com/in/danielolofsson77/"),
-			//new Reference("Per Fransson (COO)", "COO", "https://www.linkedin.com/in/perfransson/")
+			new Reference("Per Fransson (COO)", "COO", "https://www.linkedin.com/in/perfransson/")
 		]
 	)
 ];

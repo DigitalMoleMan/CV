@@ -44,7 +44,7 @@ function addEducation(education) {
 		var divItem = document.createElement("div");
 		divItem.classList.add(`item`);
 		divItem.innerHTML = `
-				<div class="item-timespan">${item.timespan.start} - ${item.timespan.end}</div>
+				<div class="item-timespan">${item.timespan}</div>
 				<div class="item-content">
 					<h3 class="item-title">${item.school}</h3>
 					<h4 class="item-subtitle">${item.degree}</h4>

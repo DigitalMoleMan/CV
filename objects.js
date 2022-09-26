@@ -6,10 +6,11 @@ class Timespan {
 	}
 
 	toString() {
-		if(this.end == "")
-			return this.start;
-		else
-			return `${this.start} - ${this.end}`;
+		switch (this.end) {
+			case "": return this.start;
+			case "Present": return `${this.start} - <b>${this.end}</b>`;
+			default: return `${this.start} - ${this.end}`;
+		}
 	}
 }
 
@@ -62,6 +63,7 @@ var skills = [
 
 var programmingLanguages = [
 	"C#",
+	"GDScript",
 	"JavaScript",
 	"Java",
 	"Python",
@@ -86,7 +88,7 @@ var experience = [
 	),
 	new Experience(
 		"FutureGames Skellefteå",
-		"Substitute Teacher",
+		"Substitute Teacher / Guest Lecturer",
 		new Timespan("Sep 2022"),
 		"Held 2 lectures on the subject of shader programming and one lecture on the subject of A* pathfinding. The lectures were held in English."
 	),
@@ -94,7 +96,7 @@ var experience = [
 		"Windswept Interactive - Internship",
 		"Programmer",
 		new Timespan("Jan 2022", "Jun 2022"),
-		"Worked on 'Ghost Signal: A Stellaris Game', A VR game made in Unity.",
+		"Worked on <i>Ghost Signal: A Stellaris Game</i>, a VR game made in Unity.",
 		[
 			new Reference("Jakob Olofsson (Programmer, Mentor)", "Programmer", "https://www.linkedin.com/in/jakob-olofsson/")
 		]

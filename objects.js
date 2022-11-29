@@ -82,9 +82,15 @@ var contact = [
 var experience = [
 	new Experience(
 		"Aurora Punks",
-		"Lead Programmer - Iron Evil",
+		"Lead Programmer - Iron Evil Studio",
 		new Timespan("Jun 2022", "Present"),
 		"Currently working on a top-down roguelike game with a team of 5 people. The game is being developed in Unity."
+	),
+	new Experience(
+		"FutureGames",
+		"Teacher (Programming)",
+		new Timespan("Nov 2021", "Dec 2021"),
+		"Taught a 5-week course on datastructures & algorithms for a class of ~50 people. The course was mainly aimed at begginers and was taught in C#."
 	),
 	new Experience(
 		"FutureGames Skellefteå",
@@ -115,7 +121,7 @@ var experience = [
 
 var education = [
 	new Education(
-		"FutureGames, Skellefteå",
+		"FutureGames Skellefteå",
 		"Vocational Education",
 		"Game Programming",
 		new Timespan("Aug 2020", "May 2022")

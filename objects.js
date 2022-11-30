@@ -89,7 +89,7 @@ var experience = [
 	new Experience(
 		"FutureGames",
 		"Teacher (Programming)",
-		new Timespan("Nov 2021", "Dec 2021"),
+		new Timespan("Nov 2022", "Dec 2022"),
 		"Taught a 5-week course on datastructures & algorithms for a class of ~50 people. The course was mainly aimed at begginers and was taught in C#."
 	),
 	new Experience(

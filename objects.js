@@ -99,8 +99,8 @@ var experience = [
 		"Held 2 lectures on the subject of shader programming and one lecture on the subject of A* pathfinding. The lectures were held in English."
 	),
 	new Experience(
-		"Windswept Interactive - Internship",
-		"Programmer",
+		"Windswept Interactive",
+		"Internship - Programmer",
 		new Timespan("Jan 2022", "Jun 2022"),
 		"Worked on <i>Ghost Signal: A Stellaris Game</i>, a VR game made in Unity.",
 		[
@@ -108,8 +108,8 @@ var experience = [
 		]
 	),
 	new Experience(
-		"The Fine Arc Nordic AB - Internship",
-		"Programmer",
+		"The Fine Arc Nordic AB",
+		"Internship - Programmer",
 		new Timespan("Jun 2021", "Aug 2021"),
 		"A small indie game studio based in Umeå. I helped implement character controls for a 2.5D space exploration game made in Unity.",
 		[

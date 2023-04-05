@@ -64,14 +64,14 @@ function addExperience(experience) {
 		if (item.references.length > 0) {
 
 
-			var divReferences = document.createElement("div");
+			var divReferences = document.createElement("ul");
 			divReferences.classList.add("references");
 			for (i = 0; i < item.references.length; i++) {
 				var reference = item.references[i];
-				var divReference = document.createElement("div");
+				var divReference = document.createElement("li");
 				divReference.classList.add("reference");
 				divReference.innerHTML = `
-					<li class="reference-name">${reference.name} - <a class="bright-link" href="${reference.linkedIn}" class="reference-linkedin">LinkedIn</a></li>
+					<span class="reference-name">${reference.name} - <a class="bright-link" href="${reference.linkedIn}" class="reference-linkedin">LinkedIn</a></span>
 			`;
 				divReferences.appendChild(divReference);
 			};

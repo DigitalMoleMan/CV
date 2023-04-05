@@ -22,28 +22,37 @@ body {
 
 main {
 	display: flex;
-	margin: 4rem auto;
-	width: 100rem;
-	min-width: 900px;
-	border-radius: 1rem;
+	flex-direction: column-reverse;
+	padding-bottom: 8rem;
+	width: 100%;
+	height: 100%;
 	color: #e9e9e9;
 	background-color: #ffffff11;
-
-	border-width: 2px;
-	border-style: solid;
-	border-color: #ffffff11;
 }
 
 #main-left {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+#main-left .skill-list {
 	display: block;
-	margin: 2rem;
-	width: 25%;
+	margin: 1rem;
+}
+
+.skill-list a {
+	display: inline-block;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: #00000033;
 }
 
 #main-right {
 	display: block;
-	margin: 2rem;
-	width: 75%;
+	margin: 0rem;
 	min-width: 300px;
 }
 
@@ -73,6 +82,11 @@ main {
 #name-container h1 {
 	margin: 0rem;
 	font-size: 4rem;
+}
+
+#name-container h2 {
+	margin: 0rem;
+	font-size: 2rem;
 }
 
 #name-container h3 {
@@ -109,23 +123,28 @@ main {
 
 .item {
 	display: flex;
+	flex-direction: column;
 	padding: 1rem;
 	width: 100%;
 }
 
 .item-timespan {
 	display: block;
-	margin-right: 2rem;
-	width: 18rem;
+	width: fit-content;
+	margin-bottom: 1rem;
+	margin-left: auto;
 
-	text-align: right;
+	background-color: #ffffff11;
+	padding: .25rem;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	border-radius: 1rem;
 
 	font-family: monospace;
 }
 
 .item-content {
 	display: block;
-	width: 75%;
 }
 
 .item-title {

@@ -84,7 +84,10 @@ var experience = [
 		"Aurora Punks",
 		"Lead Programmer - Iron Evil Studio",
 		new Timespan("Jun 2022", "Present"),
-		"Currently working on a top-down roguelike game with a team of 5 people. The game is being developed in Unity."
+		"Currently working on a top-down roguelike game with a team of 5 people. The game is being developed in Unity.",
+		[
+			new Reference("Sofia Lindh (Project Manager)", "Project Manager", "https://www.linkedin.com/in/sofia-lindh/"),
+		]
 	),
 	new Experience(
 		"FutureGames",
@@ -104,7 +107,7 @@ var experience = [
 		new Timespan("Jan 2022", "Jun 2022"),
 		"Worked on <i>Ghost Signal: A Stellaris Game</i>, a VR game made in Unity.",
 		[
-			new Reference("Jakob Olofsson (Programmer, Mentor)", "Programmer", "https://www.linkedin.com/in/jakob-olofsson/")
+			new Reference("Jakob Olofsson (Lead Programmer, Mentor)", "Lead Programmer", "https://www.linkedin.com/in/jakob-olofsson/")
 		]
 	),
 	new Experience(

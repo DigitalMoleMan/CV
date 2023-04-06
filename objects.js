@@ -75,7 +75,7 @@ var gameEngines = [
 ]
 
 var contact = [
-	new Contact("wille@aurorapunks.com", "https://wille@aurorapunks.com"),
+	new Contact("digitalmoleguy@gmail.com", "https://digitalmoleguy@gmail.com"),
 	new Contact("LinkedIn", "https://www.linkedin.com/in/wille-pilquist-79bb1a236/"),
 ]
 

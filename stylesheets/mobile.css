@@ -5,8 +5,14 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
+	background-image: -webkit-linear-gradient(180deg, #050714, #1c141f);
+	background-image: -moz-linear-gradient(180deg, #050714, #1c141f);
+	background-image: -ms-linear-gradient(180deg, #050714, #1c141f);
+	background-image: -o-linear-gradient(180deg, #050714, #1c141f);
 	background-image: linear-gradient(180deg, #050714, #1c141f);
-	background-color: #050714;
+
+
+	background-color: #1c141fff;
 }
 
 /* Handle */
@@ -15,6 +21,17 @@
 }
 
 body {
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: repeat-x;
+
+	background-image: -webkit-linear-gradient(180deg, #050714, #1c141f);
+	background-image: -moz-linear-gradient(180deg, #050714, #1c141f);
+	background-image: -ms-linear-gradient(180deg, #050714, #1c141f);
+	background-image: -o-linear-gradient(180deg, #050714, #1c141f);
 	background-image: linear-gradient(180deg, #050714, #1c141f);
 	background-color: #080b0e;
 	font-family: 'Open Sans', sans-serif;

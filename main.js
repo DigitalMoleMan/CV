@@ -1,95 +1,190 @@
-// Element References
-var divEducation = document.getElementById("content-education");
-var divExperience = document.getElementById("content-experience");
-var divContact = document.getElementById("contact-info-container");
+const DATA_PATH = "./data.json";
 
-addBasicList(languages, "content-languages");
-addBasicList(skills, "content-skills");
-addBasicList(gameEngines, "content-game-engines");
-addBasicList(programmingLanguages, "content-programmingLanguages");
-addContact(contact);
-addEducation(education);
-addExperience(experience);
+const SEPARATOR_HORIZONTAL = createSeparator();
 
-function addBasicList(skills, containerDiv) {
-	var div = document.createElement("div");
-	div.className = "skills";
-	for (var i = 0; i < skills.length; i++) {
-		var skill = document.createElement("div");
-		skill.className = "skill";
-		skill.innerHTML = skills[i];
-		div.appendChild(skill);
+const CONTENT_CARD = createContentCard();
+
+
+fetch(DATA_PATH)
+	.then(response => response.json())
+	.then(data => {
+		addMainContent(data);
+		addInfoLists(data);
+	});
+
+function formatTimespan(timespan) {
+	const { start, end } = timespan;
+	switch (end) {
+		case start: return start;
+		case "Present": return `${start} - <b>${end}</b>`;
+		default: return `${start} - ${end}`;
 	}
-	document.getElementById(containerDiv).appendChild(div);
 }
 
-function addContact(contact) {
-	var div = document.createElement("div");
-	div.className = "contact";
-	for (var i = 0; i < contact.length; i++) {
-		var contactItem = document.createElement("a");
+function createHeader(text) {
+	const header = document.createElement("h3");
+	header.classList.add("major-header");
+	header.textContent = text;
+	return header;
+}
+
+function createContentCard() {
+	const card = document.createElement("div");
+	card.classList.add("content-card");
+	return card;
+}
+
+function createContentList() {
+	const list = document.createElement("div");
+	list.classList.add("major-content-list");
+	return list;
+}
+
+function createMainContentList(mainDiv, headerText) {
+	const header = createHeader(headerText);
+	const card = CONTENT_CARD.cloneNode();
+	const list = createContentList();
+
+	mainDiv.appendChild(header);
+	mainDiv.appendChild(card);
+	card.appendChild(list);
+
+	return list;
+}
+
+function addMainContent(data) {
+	const mainContent = document.createElement("div");
+	mainContent.id = "main-content";
+
+	addExperience(createMainContentList(mainContent, "Work Experience"), data.experience);
+	addEducation(createMainContentList(mainContent, "Education"), data.education);
+
+	document.getElementById("main-right").appendChild(mainContent);
+}
+
+function createInfoListsDiv() {
+	const infoListsDiv = document.createElement("div");
+	infoListsDiv.id = "info-lists";
+	return infoListsDiv;
+}
+
+function createSeparator() {
+	const separator = document.createElement("div");
+	separator.classList.add("separator-horizontal");
+	return separator;
+}
+
+function addInfoLists(data) {
+	const infoListsDiv = createInfoListsDiv();
+
+	addBasicList(infoListsDiv, data.languages, "Languages");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.programmingLanguages, "Programming Languages");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.gameEngines, "Game Engines");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.skills, "Skills");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addContactInfo(infoListsDiv, data.contact, "Contact");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addContactInfo(infoListsDiv, data.links, "Links");
+
+	document.getElementById("main-left").appendChild(infoListsDiv);
+}
+
+
+function addBasicList(parent, items, label) {
+	const div = document.createElement("div");
+	div.classList.add("skill-list");
+
+	const header = document.createElement("h4");
+	header.textContent = label;
+
+	div.appendChild(header);
+
+	const ul = document.createElement("ul");
+	ul.classList.add("skills");
+
+	items.forEach((item) => {
+		const li = document.createElement("li");
+		li.classList.add("skill");
+		li.textContent = item;
+		ul.appendChild(li);
+	});
+	div.appendChild(ul);
+
+	parent.appendChild(div);
+}
+
+
+
+function addContactInfo(infoDIv, contact, label) {
+	const div = document.createElement("div");
+	div.classList.add("skill-list");
+	div.classList.add("contact");
+
+	const header = document.createElement("h4");
+	header.textContent = label;
+
+	div.appendChild(header);
+
+	for (let i = 0; i < contact.length; i++) {
+		const contactItem = document.createElement("a");
 		contactItem.className = "contact-item";
 
-		contactItem.href = contact[i].link;
-		contactItem.innerHTML = contact[i].label;
+		contactItem.href = contact[i].url;
+		contactItem.innerHTML = contact[i].text;
 		div.appendChild(contactItem);
 		div.appendChild(document.createElement("br"));
 	}
-	divContact.appendChild(div);
+
+	infoDIv.appendChild(div);
 }
 
-function addEducation(education) {
-	for (var i = 0; i < education.length; i++) {
-		var item = education[i];
-		var divItem = document.createElement("div");
-		divItem.classList.add(`item`);
-		divItem.innerHTML = `
-				<div class="item-timespan">${item.timespan}</div>
-				<div class="item-content">
-					<h3 class="item-title">${item.school}</h3>
-					<h4 class="item-subtitle">${item.degree}</h4>
-					<h5 class="item-subtitle">${item.field}</h5>
-				</div>
-		`;
-		divEducation.appendChild(divItem);
-	}
-}
 
-function addExperience(experience) {
-	experience.forEach(function (item) {
-		var divItem = document.createElement("div");
+
+function addExperience(parent, experience) {
+	experience.forEach(({ company, position, description, references, timespan }) => {
+		const divItem = document.createElement("div");
 		divItem.classList.add("item");
 
-		var referencesHTML = "";
-		if (item.references.length > 0) {
+		const referenceItems = references.map(({ name, linkedIn }) => `
+      <li class="reference">
+        <span class="reference-name">${name} - <a class="bright-link" href="${linkedIn}">LinkedIn</a></span>
+      </li>
+    `).join("");
 
-
-			var divReferences = document.createElement("ul");
-			divReferences.classList.add("references");
-			for (i = 0; i < item.references.length; i++) {
-				var reference = item.references[i];
-				var divReference = document.createElement("li");
-				divReference.classList.add("reference");
-				divReference.innerHTML = `
-					<span class="reference-name">${reference.name} - <a class="bright-link" href="${reference.linkedIn}" class="reference-linkedin">LinkedIn</a></span>
-			`;
-				divReferences.appendChild(divReference);
-			};
-
-			referencesHTML = `<label class="item-references">References:</label>` + divReferences.outerHTML;
-		}
-
-
+		const referencesHTML = references.length > 0 ? `
+      <label class="item-references">References:</label>
+      <ul class="references">${referenceItems}</ul>
+    ` : "";
 
 		divItem.innerHTML = `
-			<div class="item-timespan">${item.timespan.toString()}</div>
-			<div class="item-content">
-				<h3 class="item-title">${item.company}</h3>
-				<h4 class="item-subtitle">${item.position}</h4>
-				<div class="item-description">${item.description}</div>
-				${referencesHTML}
-			</div>
-		`;
-		divExperience.appendChild(divItem);
+      <div class="item-timespan">${formatTimespan(timespan)}</div>
+      <div class="item-content">
+        <h3 class="item-title">${company}</h3>
+        <h4 class="item-subtitle">${position}</h4>
+        <div class="item-description">${description}</div>
+        ${referencesHTML}
+      </div>
+    `;
+
+		parent.appendChild(divItem);
+	});
+}
+
+function addEducation(parent, education) {
+	education.forEach(({ timespan, school, degree, field }) => {
+		const divItem = document.createElement("div");
+		divItem.classList.add(`item`);
+		divItem.innerHTML = `
+		<div class="item-timespan">${formatTimespan(timespan)}</div>
+		<div class="item-content">
+		  <h3 class="item-title">${school}</h3>
+		  <h4 class="item-subtitle">${degree}</h4>
+		  <h5 class="item-subtitle">${field}</h5>
+		</div>
+	  `;
+		parent.appendChild(divItem);
 	});
 }

@@ -1,0 +1,140 @@
+{
+    "experience": [
+        {
+            "company": "Aurora Punks",
+            "position": "Lead Programmer - Iron Evil Studio",
+            "timespan": {
+                "start": "Jun 2022",
+                "end": "Present"
+            },
+            "description": "Currently working on a top-down roguelike game with a team of 5 people. The game is being developed in Unity.",
+            "references": [
+                {
+                    "name": "Sofia Lindh (Project Manager)",
+                    "position": "Project Manager",
+                    "linkedIn": "https://www.linkedin.com/in/sofia-lindh/"
+                }
+            ]
+        },
+        {
+            "company": "FutureGames",
+            "position": "Teacher (Programming)",
+            "timespan": {
+                "start": "Nov 2022",
+                "end": "Dec 2022"
+            },
+            "description": "Taught a 5-week course on datastructures & algorithms for a class of ~50 people. The course was mainly aimed at begginers and was taught in C#.",
+            "references": []
+        },
+        {
+            "company": "FutureGames Skellefteå",
+            "position": "Substitute Teacher / Guest Lecturer",
+            "timespan": {
+                "start": "Sep 2022",
+                "end": "Sep 2022"
+            },
+            "description": "Held 2 lectures on the subject of shader programming and one lecture on the subject of A* pathfinding. The lectures were held in English.",
+            "references": []
+        },
+        {
+            "company": "Windswept Interactive",
+            "position": "Internship - Programmer",
+            "timespan": {
+                "start": "Jan 2022",
+                "end": "Jun 2022"
+            },
+            "description": "Worked on <i>Ghost Signal: A Stellaris Game</i>, a VR game made in Unity.",
+            "references": [
+                {
+                    "name": "Jakob Olofsson (Lead Programmer, Mentor)",
+                    "position": "Lead Programmer",
+                    "linkedIn": "https://www.linkedin.com/in/jakob-olofsson/"
+                }
+            ]
+        },
+        {
+            "company": "The Fine Arc Nordic AB",
+            "position": "Internship - Programmer",
+            "timespan": {
+                "start": "Jun 2021",
+                "end": "Aug 2021"
+            },
+            "description": "A small indie game studio based in Umeå. I helped implement character controls for a 2.5D space exploration game made in Unity.",
+            "references": [
+                {
+                    "name": "Per Fransson (COO)",
+                    "position": "COO",
+                    "linkedIn": "https://www.linkedin.com/in/perfransson/"
+                }
+            ]
+        }
+    ],
+    "education": [
+        {
+            "school": "FutureGames Skellefteå",
+            "degree": "Vocational Education",
+            "field": "Game Programming",
+            "timespan": {
+                "start": "Aug 2020",
+                "end": "May 2022"
+            }
+        },
+        {
+            "school": "NTI Gymnasiet, Umeå",
+            "degree": "Technical college graduate (Gymnasieingenjör)",
+            "field": "Programming / Software Development",
+            "timespan": {
+                "start": "Aug 2019",
+                "end": "May 2020"
+            }
+        },
+        {
+            "school": "NTI Gymnasiet, Umeå",
+            "degree": "High school graduate (Gymnasieexamen)",
+            "field": "Technology",
+            "timespan": {
+                "start": "Aug 2016",
+                "end": "May 2019"
+            }
+        }
+    ],
+    "languages": [
+        "Enghish",
+        "Swedish"
+    ],
+    "programmingLanguages": [
+        "C#",
+        "GDScript",
+        "Java",
+        "Python",
+        "Javascript",
+        "Typescript"
+    ],
+    "gameEngines": [
+        "Unity",
+        "Godot"
+    ],
+    "skills": [
+        "Realtime Game Logic",
+        "System Design & Implementation",
+        "Optimization",
+        "Pathfinding",
+        "Shaders"
+    ],
+    "contact": [
+        {
+            "text": "digitalmoleguy@gmail.com",
+            "url": "https://digitalmoleguy@gmail.com"
+        },
+        {
+            "text": "LinkedIn",
+            "url": "https://www.linkedin.com/in/wille-pilquist-79bb1a236/"
+        }
+    ],
+    "links": [
+        {
+            "text": "Portfolio (Somewhat outdated)",
+            "url": "https://docs.google.com/document/d/1xCcDn1TiYZZCbiKZtvmvej2U7AYeIVkkRqeB3TTLV8A/edit?usp=sharing"
+        }
+    ]
+}

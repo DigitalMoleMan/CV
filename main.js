@@ -1,80 +1,93 @@
-// Element References
-const divEducation = document.getElementById("content-education");
-const divExperience = document.getElementById("content-experience");
-const divContact = document.getElementById("contact-info-container");
+const DATA_PATH = "./data.json";
+
+const SEPARATOR_HORIZONTAL = createSeparator();
+
+const CONTENT_CARD = createContentCard();
 
 
+fetch(DATA_PATH)
+	.then(response => response.json())
+	.then(data => {
+		addMainContent(data);
+		addInfoLists(data);
+	});
 
+function formatTimespan(timespan) {
+	const { start, end } = timespan;
+	switch (end) {
+		case start: return start;
+		case "Present": return `${start} - <b>${end}</b>`;
+		default: return `${start} - ${end}`;
+	}
+}
 
-addMainContent();
-addInfoLists();
+function createHeader(text) {
+	const header = document.createElement("h3");
+	header.classList.add("major-header");
+	header.textContent = text;
+	return header;
+}
 
-function addMainContent() {
+function createContentCard() {
+	const card = document.createElement("div");
+	card.classList.add("content-card");
+	return card;
+}
+
+function createContentList() {
+	const list = document.createElement("div");
+	list.classList.add("major-content-list");
+	return list;
+}
+
+function createMainContentList(mainDiv, headerText) {
+	const header = createHeader(headerText);
+	const card = CONTENT_CARD.cloneNode();
+	const list = createContentList();
+
+	mainDiv.appendChild(header);
+	mainDiv.appendChild(card);
+	card.appendChild(list);
+
+	return list;
+}
+
+function addMainContent(data) {
 	const mainContent = document.createElement("div");
 	mainContent.id = "main-content";
 
-	const experienceHeader = document.createElement("h3");
-	experienceHeader.classList.add("major-header");
-	experienceHeader.textContent = "Work Experience";
-
-	const experienceContentCard = document.createElement("div");
-	experienceContentCard.classList.add("content-card");
-
-	const experienceContentList = document.createElement("div");
-	experienceContentList.classList.add("major-content-list");
-	experienceContentList.id = "content-experience";
-
-	mainContent.appendChild(experienceHeader);
-	mainContent.appendChild(experienceContentCard);
-
-	experienceContentCard.appendChild(experienceContentList);
-
-
-	addExperience(experienceContentList, experience);
-
-
-	const educationHeader = document.createElement("h3");
-	educationHeader.classList.add("major-header");
-	educationHeader.textContent = "Education";
-
-	const educationContentCard = document.createElement("div");
-	educationContentCard.classList.add("content-card");
-
-	const educationContentList = document.createElement("div");
-	educationContentList.classList.add("major-content-list");
-	educationContentList.id = "content-education";
-
-	mainContent.appendChild(educationHeader);
-	mainContent.appendChild(educationContentCard);
-
-	educationContentCard.appendChild(educationContentList);
-
-	addEducation(educationContentList, education);
-
+	addExperience(createMainContentList(mainContent, "Work Experience"), data.experience);
+	addEducation(createMainContentList(mainContent, "Education"), data.education);
 
 	document.getElementById("main-right").appendChild(mainContent);
 }
 
-function addInfoLists() {
+function createInfoListsDiv() {
 	const infoListsDiv = document.createElement("div");
-	infoListsDiv.id = "info-lists"
+	infoListsDiv.id = "info-lists";
+	return infoListsDiv;
+}
 
+function createSeparator() {
 	const separator = document.createElement("div");
 	separator.classList.add("separator-horizontal");
+	return separator;
+}
 
-	addBasicList(infoListsDiv, languages, "Languages");
-	infoListsDiv.appendChild(separator.cloneNode());
-	addBasicList(infoListsDiv, programmingLanguages, "Programming Languages");
-	infoListsDiv.appendChild(separator.cloneNode());
-	addBasicList(infoListsDiv, gameEngines, "Game Engines");
-	infoListsDiv.appendChild(separator.cloneNode());
-	addBasicList(infoListsDiv, skills, "Skills");
-	infoListsDiv.appendChild(separator.cloneNode());
-	infoListsDiv.appendChild(addContact(contact, "Contact"));
-	infoListsDiv.appendChild(separator.cloneNode());
-	infoListsDiv.appendChild(addContact([new Contact("Portfolio (Somewhat outdated)", "https://docs.google.com/document/d/1xCcDn1TiYZZCbiKZtvmvej2U7AYeIVkkRqeB3TTLV8A/edit?usp=sharing")], "Links"));
+function addInfoLists(data) {
+	const infoListsDiv = createInfoListsDiv();
 
-	//addContact(contact, infoListsDiv.getElementById("contact-info-container"));
+	addBasicList(infoListsDiv, data.languages, "Languages");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.programmingLanguages, "Programming Languages");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.gameEngines, "Game Engines");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.skills, "Skills");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addContactInfo(infoListsDiv, data.contact, "Contact");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addContactInfo(infoListsDiv, data.links, "Links");
 
 	document.getElementById("main-left").appendChild(infoListsDiv);
 }
@@ -105,7 +118,7 @@ function addBasicList(parent, items, label) {
 
 
 
-function addContact(contact, label) {
+function addContactInfo(infoDIv, contact, label) {
 	const div = document.createElement("div");
 	div.classList.add("skill-list");
 	div.classList.add("contact");
@@ -119,33 +132,15 @@ function addContact(contact, label) {
 		const contactItem = document.createElement("a");
 		contactItem.className = "contact-item";
 
-		contactItem.href = contact[i].link;
-		contactItem.innerHTML = contact[i].label;
+		contactItem.href = contact[i].url;
+		contactItem.innerHTML = contact[i].text;
 		div.appendChild(contactItem);
 		div.appendChild(document.createElement("br"));
 	}
 
-	return div;
+	infoDIv.appendChild(div);
 }
 
-
-
-
-function addEducation(parent, education) {
-	education.forEach(({ timespan, school, degree, field }) => {
-		const divItem = document.createElement("div");
-		divItem.classList.add(`item`);
-		divItem.innerHTML = `
-		<div class="item-timespan">${timespan}</div>
-		<div class="item-content">
-		  <h3 class="item-title">${school}</h3>
-		  <h4 class="item-subtitle">${degree}</h4>
-		  <h5 class="item-subtitle">${field}</h5>
-		</div>
-	  `;
-		parent.appendChild(divItem);
-	});
-}
 
 
 function addExperience(parent, experience) {
@@ -165,7 +160,7 @@ function addExperience(parent, experience) {
     ` : "";
 
 		divItem.innerHTML = `
-      <div class="item-timespan">${timespan}</div>
+      <div class="item-timespan">${formatTimespan(timespan)}</div>
       <div class="item-content">
         <h3 class="item-title">${company}</h3>
         <h4 class="item-subtitle">${position}</h4>
@@ -174,6 +169,22 @@ function addExperience(parent, experience) {
       </div>
     `;
 
+		parent.appendChild(divItem);
+	});
+}
+
+function addEducation(parent, education) {
+	education.forEach(({ timespan, school, degree, field }) => {
+		const divItem = document.createElement("div");
+		divItem.classList.add(`item`);
+		divItem.innerHTML = `
+		<div class="item-timespan">${formatTimespan(timespan)}</div>
+		<div class="item-content">
+		  <h3 class="item-title">${school}</h3>
+		  <h4 class="item-subtitle">${degree}</h4>
+		  <h5 class="item-subtitle">${field}</h5>
+		</div>
+	  `;
 		parent.appendChild(divItem);
 	});
 }

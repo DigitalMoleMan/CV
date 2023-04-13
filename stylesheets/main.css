@@ -1,33 +1,11 @@
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-
 :root {
     --color-glass: #ffffff11;
 }
 
-
-
-/* width */
-::-webkit-scrollbar {
-	width: 1rem;
+*{
+	box-sizing: border-box;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-	background-image: -webkit-linear-gradient(180deg, #050714, #1c141f);
-	background-image: -moz-linear-gradient(180deg, #050714, #1c141f);
-	background-image: -ms-linear-gradient(180deg, #050714, #1c141f);
-	background-image: -o-linear-gradient(180deg, #050714, #1c141f);
-	background-image: linear-gradient(180deg, #050714, #1c141f);
-
-	background-color: #1c141fff;
-}
-
-
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: var(--color-glass);
-}
 
 body {
 	width: 100%;
@@ -43,12 +21,16 @@ body {
 
 	background-color: #1c141fff;
 	font-family: 'Open Sans', sans-serif;
+
+	font-size: 14px;;
+	line-height: 1.42857143;
 }
 
 main {
 	display: flex;
 	color: #e9e9e9;
 	background-color: var(--color-glass);
+	
 }
 
 #main-right {
@@ -75,7 +57,7 @@ main {
 #name-container {
 	display: block;
 	margin: 1rem;
-	margin-bottom: 0rem;
+
 	width: fit-content;
 }
 
@@ -108,7 +90,6 @@ ul{
 .major-header {
 	display: block;
 	margin: 1rem;
-	margin-bottom: 0rem;
 	padding: 1rem;
 	width: fit-content;
 	border-radius: 1rem;

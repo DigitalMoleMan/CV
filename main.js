@@ -150,7 +150,7 @@ function addContactInfo(infoDIv, contact, label) {
 
 
 function createExperience(parent, experience) {
-	experience.forEach(({ company, position, description, references, timespan }) => {
+	experience.forEach(({ company, position, description, references, timespan, secondPosition, secondDescription }) => {
 		const divItem = document.createElement("div");
 		divItem.classList.add("item");
 
@@ -171,12 +171,17 @@ function createExperience(parent, experience) {
         <h3 class="item-title">${company}</h3>
         <h4 class="item-subtitle">${position}</h4>
         <div class="item-description">${description}</div>
+		${secondPosition != null ?
+				`<h4 class="item-subtitle">${secondPosition}</h4>
+			<div class="item-description">${secondDescription}</div>` : ""}
         ${referencesHTML}
       </div>
     `;
 
 		parent.appendChild(divItem);
+		parent.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
 	});
+	parent.removeChild(parent.lastChild);
 }
 
 function createReference(reference) {
@@ -232,5 +237,7 @@ function addEducation(parent, education) {
 		</div>
 	  `;
 		parent.appendChild(divItem);
+		parent.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
 	});
+	parent.removeChild(parent.lastChild);
 }

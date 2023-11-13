@@ -1,14 +1,21 @@
 {
 	"experience": [
 		{
-			"company": "Aurora Punks - Aurora Punks Games",
-			"position": "Programmer",
+			"company": "Aurora Punks",
+			"position": "Lead Programmer - Iron Evil Studio",
+			"secondPosition": "Programmer - Aurora Punks Games",
 			"timespan": {
-				"start": "May 2023",
+				"start": "Jun 2022",
 				"end": "Nov 2023"
 			},
-			"description": "Worked on various projects where an additional programmer was needed. This required quick adaptation to new codebases and workflows.",
+			"description": "Worked on a top-down roguelike game called <i>\"IRON EVIL\"</i> with a team of 5 people. The game is made in Unity.",
+			"secondDescription": "Worked on various projects where an additional programmer was needed. This required quick adaptation to new codebases and workflows.",
 			"references": [
+				{
+					"name": "Sofia Lindh (Project Manager)",
+					"position": "Project Manager",
+					"linkedIn": "https://www.linkedin.com/in/sofia-lindh/"
+				},
 				{
 					"name": "Fredrik Larsson (Manager)",
 					"position": "Manager",
@@ -17,22 +24,6 @@
 						"email": "larsson.fredrik1987@gmail.com",
 						"phone": "070-2846574"
 					}
-				}
-			]
-		},
-		{
-			"company": "Aurora Punks - Iron Evil Studio",
-			"position": "Lead Programmer",
-			"timespan": {
-				"start": "Jun 2022",
-				"end": "May 2023"
-			},
-			"description": "Worked on a top-down roguelike game called <i>\"IRON EVIL\"</i> with a team of 5 people. The game is made in Unity.",
-			"references": [
-				{
-					"name": "Sofia Lindh (Project Manager)",
-					"position": "Project Manager",
-					"linkedIn": "https://www.linkedin.com/in/sofia-lindh/"
 				}
 			]
 		},

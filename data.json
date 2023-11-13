@@ -1,13 +1,33 @@
 {
 	"experience": [
 		{
-			"company": "Aurora Punks",
-			"position": "Lead Programmer - Iron Evil Studio",
+			"company": "Aurora Punks - Aurora Punks Games",
+			"position": "Programmer",
 			"timespan": {
-				"start": "Jun 2022",
+				"start": "May 2023",
 				"end": "Present"
 			},
-			"description": "Currently working on a top-down roguelike game with a team of 5 people. The game is being developed in Unity.",
+			"description": "Worked on various projects where an additional programmer was needed. This required quick adaptation to new codebases and workflows.",
+			"references": [
+				{
+					"name": "Fredrik Larsson (Manager)",
+					"position": "Manager",
+					"linkedIn": "https://www.linkedin.com/in/fredriklarsson87/",
+					"contact": {
+						"email": "larsson.fredrik1987@gmail.com",
+						"phone": "070-2846574"
+					}
+				}
+			]
+		},
+		{
+			"company": "Aurora Punks - Iron Evil Studio",
+			"position": "Lead Programmer",
+			"timespan": {
+				"start": "Jun 2022",
+				"end": "May 2023"
+			},
+			"description": "Worked on a top-down roguelike game called <i>\"IRON EVIL\"</i> with a team of 5 people. The game is made in Unity.",
 			"references": [
 				{
 					"name": "Sofia Lindh (Project Manager)",
@@ -43,7 +63,7 @@
 				"start": "Jan 2022",
 				"end": "Jun 2022"
 			},
-			"description": "Worked on <i>Ghost Signal: A Stellaris Game</i>, a VR game made in Unity.",
+			"description": "Worked on <i>\"Ghost Signal: A Stellaris Game\"</i>, a VR game made in Unity.",
 			"references": [
 				{
 					"name": "Jakob Olofsson (Lead Programmer, Mentor)",
@@ -105,6 +125,7 @@
 	"programmingLanguages": [
 		"C#",
 		"GDScript",
+		"Lua",
 		"Java",
 		"Python",
 		"Javascript",
@@ -112,7 +133,9 @@
 	],
 	"gameEngines": [
 		"Unity",
-		"Godot"
+		"Godot",
+		"LÖVE",
+		"PICO-8"
 	],
 	"skills": [
 		"Realtime Game Logic",

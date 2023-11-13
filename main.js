@@ -12,6 +12,47 @@ fetch(DATA_PATH)
 		addInfoLists(data);
 	});
 
+function addMainContent(data) {
+	const mainContent = document.createElement("div");
+	mainContent.id = "main-content";
+
+	createExperience(createMainContentList(mainContent, "Work Experience"), data.experience);
+	addEducation(createMainContentList(mainContent, "Education"), data.education);
+
+	document.getElementById("main-right").appendChild(mainContent);
+}
+
+function addInfoLists(data) {
+	const infoListsDiv = createInfoListsDiv();
+
+	addBasicList(infoListsDiv, data.languages, "Languages");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.programmingLanguages, "Programming Languages");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.gameEngines, "Game Engines");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.skills, "Skills");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addContactInfo(infoListsDiv, data.contact, "Contact");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addContactInfo(infoListsDiv, data.links, "Links");
+
+	document.getElementById("main-left").appendChild(infoListsDiv);
+}
+
+function createMainContentList(mainDiv, headerText) {
+	const header = createHeader(headerText);
+	const card = CONTENT_CARD.cloneNode();
+	const list = createContentList();
+
+	mainDiv.appendChild(header);
+	mainDiv.appendChild(card);
+	card.appendChild(list);
+
+	return list;
+}
+
+
 function formatTimespan(timespan) {
 	const { start, end } = timespan;
 	switch (end) {
@@ -40,27 +81,9 @@ function createContentList() {
 	return list;
 }
 
-function createMainContentList(mainDiv, headerText) {
-	const header = createHeader(headerText);
-	const card = CONTENT_CARD.cloneNode();
-	const list = createContentList();
 
-	mainDiv.appendChild(header);
-	mainDiv.appendChild(card);
-	card.appendChild(list);
 
-	return list;
-}
 
-function addMainContent(data) {
-	const mainContent = document.createElement("div");
-	mainContent.id = "main-content";
-
-	addExperience(createMainContentList(mainContent, "Work Experience"), data.experience);
-	addEducation(createMainContentList(mainContent, "Education"), data.education);
-
-	document.getElementById("main-right").appendChild(mainContent);
-}
 
 function createInfoListsDiv() {
 	const infoListsDiv = document.createElement("div");
@@ -74,23 +97,6 @@ function createSeparator() {
 	return separator;
 }
 
-function addInfoLists(data) {
-	const infoListsDiv = createInfoListsDiv();
-
-	addBasicList(infoListsDiv, data.languages, "Languages");
-	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addBasicList(infoListsDiv, data.programmingLanguages, "Programming Languages");
-	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addBasicList(infoListsDiv, data.gameEngines, "Game Engines");
-	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addBasicList(infoListsDiv, data.skills, "Skills");
-	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addContactInfo(infoListsDiv, data.contact, "Contact");
-	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addContactInfo(infoListsDiv, data.links, "Links");
-
-	document.getElementById("main-left").appendChild(infoListsDiv);
-}
 
 
 function addBasicList(parent, items, label) {
@@ -143,16 +149,16 @@ function addContactInfo(infoDIv, contact, label) {
 
 
 
-function addExperience(parent, experience) {
+function createExperience(parent, experience) {
 	experience.forEach(({ company, position, description, references, timespan }) => {
 		const divItem = document.createElement("div");
 		divItem.classList.add("item");
 
-		const referenceItems = references.map(({ name, linkedIn }) => `
-      <li class="reference">
-        <span class="reference-name">${name} - <a class="bright-link" href="${linkedIn}">LinkedIn</a></span>
-      </li>
-    `).join("");
+		var referenceItems = "";
+
+		for (let reference of references) {
+			referenceItems += createReference(reference).outerHTML;
+		}
 
 		const referencesHTML = references.length > 0 ? `
       <label class="item-references">References:</label>
@@ -171,6 +177,46 @@ function addExperience(parent, experience) {
 
 		parent.appendChild(divItem);
 	});
+}
+
+function createReference(reference) {
+	const container = document.createElement("li");
+	container.classList.add("reference");
+
+	const mainLine = document.createElement("span");
+	mainLine.classList.add("reference-name");
+	container.textContent = `${reference.name} - `;
+
+	const linkedIn = document.createElement("a");
+	linkedIn.href = reference.linkedIn;
+	linkedIn.textContent = "LinkedIn";
+	linkedIn.classList.add("bright-link");
+
+	container.appendChild(linkedIn);
+
+	if (reference.contact) {
+
+		const contactList = document.createElement("ul");
+
+		if (reference.contact.email != null) {
+			const email = document.createElement("li");
+			email.innerHTML = `E-Mail: <a class="bright-link" href="${reference.contact.email}">${reference.contact.email}</a>`;
+			contactList.appendChild(email);
+		}
+
+		if (reference.contact.phone != null) {
+			const phone = document.createElement("li");
+			phone.textContent = `Phone: ${reference.contact.phone}`;
+			contactList.appendChild(phone);
+		}
+
+		container.appendChild(contactList);
+
+	}
+
+	//container.appendChild(mainLine);
+
+	return container;
 }
 
 function addEducation(parent, education) {

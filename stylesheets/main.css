@@ -30,7 +30,6 @@ main {
 	display: flex;
 	color: #e9e9e9;
 	background-color: var(--color-glass);
-
 }
 
 #main-right {
@@ -52,6 +51,14 @@ main {
 	height: .1rem;
 	background-image: radial-gradient(circle, #ffffff22 75%, #ffffff00);
 
+}
+
+#profile-picture {
+	display: block;
+	margin: 1rem;
+	width: 25%;
+	height: auto;
+	border-radius: 1rem;
 }
 
 #name-container {

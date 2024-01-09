@@ -53,6 +53,12 @@ main {
 
 }
 
+#profile-container {
+	display: flex;
+	flex-direction: row;
+
+}
+
 #profile-picture {
 	display: block;
 	margin: 1rem;

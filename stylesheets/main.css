@@ -1,15 +1,23 @@
 :root {
 	--color-glass: #ffffff11;
+	--color-glass-light: #ffffff1a;
+
+	--bg-gradient: linear-gradient(180deg, #050714, #1c141f);
+
+	--shadow: 0 2px 2px #000000ff;
 }
 
 * {
 	box-sizing: border-box;
 }
 
+html {
+	min-height: 100%;
+}
 
 body {
 	width: 100%;
-
+	min-height: 100%;
 	background-repeat: repeat-x;
 
 	background-image: -webkit-linear-gradient(180deg, #050714, #1c141f);
@@ -24,6 +32,23 @@ body {
 
 	font-size: 14px;
 	line-height: 1.42857143;
+}
+
+/* repeating transparent background pattern that covers the entire page down to the bottom */
+.background-pattern {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+
+	background-blend-mode: overlay;
+	background-image: url('../img/patterns/pattern_49.svg');
+	background-repeat: repeat;
+	background-position: center;
+	background-size: 100rem;
+
+	opacity: 0.008;
 }
 
 main {
@@ -65,6 +90,8 @@ main {
 	width: 25%;
 	height: auto;
 	border-radius: 1rem;
+
+	box-shadow: var(--shadow);
 }
 
 #name-container {
@@ -92,6 +119,8 @@ main {
 
 ul {
 	padding-left: 2rem;
+
+	list-style-type: none;
 }
 
 #main-content-list {
@@ -152,13 +181,65 @@ h4.item-subtitle {
 }
 
 .item-description {
-	margin-left: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-left: 2rem;
 	min-height: 2rem;
 }
+
+
 
 .item-references {
 	display: block;
 	margin-top: 1rem;
 	margin-bottom: 0rem;
 	width: 100%;
+}
+
+.reference {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.item-images {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.item-image {
+	display: inline-block;
+	margin: 1rem;
+	width: 30%;
+	height: auto;
+	border-radius: 1rem;
+}
+
+
+.button-link {
+	display: inline-block;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: #00000033;
+
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--color-glass);
+	border-top-color: var(--color-glass-light);
+
+	box-shadow: 0 2px 2px #000000ff;
+}
+
+
+.item-portfolio-link {
+	display: inline-block;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	margin-right: .5rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: #00000033;
 }

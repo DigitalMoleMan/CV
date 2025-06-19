@@ -1,0 +1,128 @@
+{
+	"projects": [
+		{
+			"name": "HELLSPRINT",
+			"role": "Solo Project",
+			"description": "A momentum-based, first-person speedrunner inspired by classic FPS games like Quake, Doom and Unreal Tournament.",
+			"technologies": [
+				"Godot",
+				"GDScript",
+				"Steamworks API",
+				"Firebase"
+			],
+			"links": [
+				{
+					"label": "Steam",
+					"url": "https://store.steampowered.com/app/3711160/HELLSPRINT/"
+				},
+				{
+					"label": "Discord",
+					"url": "https://discord.gg/5WW6pGJUxK"
+				}
+			],
+			"images": [
+				"img/portfolio/hellsprint/0.png",
+				"img/portfolio/hellsprint/1.png",
+				"img/portfolio/hellsprint/2.png"
+			]
+		},
+		{
+			"name": "HOOJA (Official Mobile Game)",
+			"role": "Programmer, General Developer",
+			"description": "An endless runner made in collaboration with the hit Swedish artist HOOJA.",
+			"technologies": [
+				"Unity",
+				"PlayFab",
+				"AdMob"
+			],
+			"links": [
+				{
+					"label": "Trailer",
+					"url": "https://youtu.be/okRDng7mfJI?si=9j6RPajW_Zk8hh24"
+				}
+			],
+			"images": [
+				"img/portfolio/hooja/0.webp",
+				"img/portfolio/hooja/1.webp",
+				"img/portfolio/hooja/2.webp"
+			]
+		},
+		{
+			"name": "IRON EVIL",
+			"role": "Lead Programmer, Designer",
+			"description": "A roguelite where you traverse a factory run by an evil corporation, equip yourself with the best of parts (that hardly have any defects!) and fight your way to the end. However, the parts you don't equip the factory applies elsewhere...",
+			"technologies": [
+				"Unity",
+				"C#",
+				"Git",
+				"Visual Studio"
+			],
+			"links": [
+				{
+					"label": "Steam",
+					"url": "https://store.steampowered.com/app/1795100/IRON_EVIL/"
+				}
+			],
+			"images": [
+				"img/portfolio/iron_evil/0.jpg",
+				"img/portfolio/iron_evil/1.jpg",
+				"img/portfolio/iron_evil/2.jpg"
+			]
+		},
+		{
+			"name": "Sutarabu",
+			"role": "Solo Project",
+			"description": "An arcade shoot-em-up. It features fast-paced action, colorful graphics, and a catchy soundtrack.",
+			"technologies": [
+				"Unity",
+				"C#"
+			],
+			"images": [
+				"img/portfolio/sutarabu/0.png",
+				"img/portfolio/sutarabu/1.png",
+				"img/portfolio/sutarabu/2.png"
+			],
+			"links": [
+				{
+					"label": "Itch.io",
+					"url": "https://digitalmole.itch.io/sutarabu"
+				}
+			]
+		},
+		{
+			"name": "CyberBlitz",
+			"role": "Programmer, UX Design",
+			"description": "School project. Online multiplayer strategy game made in Unity. Of my contributions I would like to highlight the movement path UI, aim-cones and the server-side round-simulation.",
+			"technologies": [
+				"Unity",
+				"Node.js",
+				"Socket.IO"
+			],
+			"links": [
+				{
+					"label": "Trailer",
+					"url": "https://www.youtube.com/watch?v=0g1v2a3b4c5"
+				}
+			],
+			"images": [
+				"img/portfolio/cyberblitz/0.png",
+				"img/portfolio/cyberblitz/1.png",
+				"img/portfolio/cyberblitz/2.png"
+			]
+		},
+		{
+			"name": "Impulse Charge",
+			"role": "Solo Project",
+			"description": "Anti-Gravity racing game made in Unity. The game is a mix between F-Zero and Wipeout.",
+			"technologies": [
+				"Unity"
+			],
+			"images": [
+				"img/portfolio/impulse_charge/0.png",
+				"img/portfolio/impulse_charge/1.png",
+				"img/portfolio/impulse_charge/2.png"
+			],
+			"links": []
+		}
+	]
+}

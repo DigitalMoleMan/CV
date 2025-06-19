@@ -10,6 +10,9 @@ fetch(DATA_PATH)
 	.then(data => {
 		addMainContent(data);
 		addInfoLists(data);
+
+		//set the height of the background pattern to the height of the entire page
+		document.getElementById("background-pattern").style.height = `${document.documentElement.scrollHeight}px`;
 	});
 
 function addMainContent(data) {
@@ -31,11 +34,13 @@ function addInfoLists(data) {
 	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
 	addBasicList(infoListsDiv, data.gameEngines, "Game Engines");
 	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addBasicList(infoListsDiv, data.skills, "Skills");
+	addBasicList(infoListsDiv, data.systemsAndServices, "Tools, Systems & Frameworks");
+	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	addBasicList(infoListsDiv, data.skills, "Standout Skills");
 	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
 	addContactInfo(infoListsDiv, data.contact, "Contact");
-	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	addContactInfo(infoListsDiv, data.links, "Links");
+	//infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
+	//addContactInfo(infoListsDiv, data.links, "Links");
 
 	document.getElementById("main-left").appendChild(infoListsDiv);
 }
@@ -190,28 +195,31 @@ function createReference(reference) {
 
 	const mainLine = document.createElement("span");
 	mainLine.classList.add("reference-name");
-	container.textContent = `${reference.name} - `;
+	container.textContent = `${reference.name}`;
 
-	const linkedIn = document.createElement("a");
-	linkedIn.href = reference.linkedIn;
-	linkedIn.textContent = "LinkedIn";
-	linkedIn.classList.add("bright-link");
-
-	container.appendChild(linkedIn);
+	if (reference.position != null) {
+		container.textContent += ` (${reference.position})`;
+	}
 
 	if (reference.contact) {
 
 		const contactList = document.createElement("ul");
 
+		if (reference.contact.linkedIn != null) {
+			const linkedIn = document.createElement("li");
+			linkedIn.innerHTML = `<span>LinkedIn: </span><a class="bright-link" href="${reference.contact.linkedIn}">${reference.name}</a>`;
+			contactList.appendChild(linkedIn);
+		}
+
 		if (reference.contact.email != null) {
 			const email = document.createElement("li");
-			email.innerHTML = `E-Mail: <a class="bright-link" href="${reference.contact.email}">${reference.contact.email}</a>`;
+			email.innerHTML = `<span>E-Mail: </span><a class="bright-link" href="mailto:${reference.contact.email}">${reference.contact.email}</a>`;
 			contactList.appendChild(email);
 		}
 
 		if (reference.contact.phone != null) {
 			const phone = document.createElement("li");
-			phone.textContent = `Phone: ${reference.contact.phone}`;
+			phone.innerHTML = `<span>Phone: </span><a class="bright-link" href="tel:${reference.contact.phone}">${reference.contact.phone}</a>`;
 			contactList.appendChild(phone);
 		}
 

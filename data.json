@@ -1,50 +1,66 @@
 {
 	"experience": [
 		{
+			"company": "Metropolis Digital",
+			"position": "Game Developer",
+			"timespan": {
+				"start": "Aug 2024",
+				"end": "Present"
+			},
+			"description": "I helped build a digital games platform designed to boost team cohesion, creativity, and employee engagement for remote teams. I worked on the platform's <b>game framework</b>, which is built in Unity using <b>Photon Quantum</b>.",
+			"references": [
+				{
+					"name": "Anders Gunnarsson",
+					"position": "CEO",
+					"contact": {
+						"linkedIn": "https://se.linkedin.com/in/anders-gunnarsson-26b2846",
+						"phone": "+46 73 5331771"
+					}
+				}
+			]
+		},
+		{
 			"company": "Aurora Punks",
-			"position": "Lead Programmer - Iron Evil Studio",
-			"secondPosition": "Programmer - Aurora Punks Games",
 			"timespan": {
 				"start": "Jun 2022",
 				"end": "Nov 2023"
 			},
-			"description": "Worked on a top-down roguelike game called <i>\"IRON EVIL\"</i> with a team of 5 people. The game is made in Unity.",
-			"secondDescription": "Worked on various projects where an additional programmer was needed. This required quick adaptation to new codebases and workflows.",
+			"position": "HOOJA (Official Mobile Game)",
+			"description": "A 2D endless runner game made for mobile in collaboration with the hit <b>Swedish artist HOOJA</b>.",
+			"secondPosition": "Lead Programmer - IRON EVIL",
+			"secondDescription": "A top-down shooter roguelike created by a team of five. I was responsible for the <b>majority of the game systems</b>, such as the <b>procedural level generation</b>, entity system, <b>enemy AI framework</b> and <b>modular player upgrades</b>. I also did a fair share of <b>game design</b> for the project.",
 			"references": [
 				{
-					"name": "Sofia Lindh (Project Manager)",
-					"position": "Project Manager",
-					"linkedIn": "https://www.linkedin.com/in/sofia-lindh/"
+					"name": "Sofia Lindh",
+					"position": "Producer",
+					"linkedIn": "https://www.linkedin.com/in/sofia-lindh/",
+					"contact": {
+						"linkedIn": "https://www.linkedin.com/in/sofia-lindh/",
+						"email": "sofia@iiixxiproduction.com"
+					}
 				},
 				{
-					"name": "Fredrik Larsson (Manager)",
+					"name": "Fredrik Larsson",
 					"position": "Manager",
 					"linkedIn": "https://www.linkedin.com/in/fredriklarsson87/",
 					"contact": {
+						"linkedIn": "https://www.linkedin.com/in/fredriklarsson87/",
 						"email": "larsson.fredrik1987@gmail.com",
-						"phone": "070-2846574"
+						"phone": "+46 70 2846574"
 					}
 				}
 			]
 		},
 		{
 			"company": "FutureGames",
-			"position": "Teacher (Programming)",
 			"timespan": {
 				"start": "Nov 2022",
 				"end": "Dec 2022"
 			},
-			"description": "Taught a 5-week course on datastructures & algorithms for a class of ~50 people. The course was mainly aimed at begginers and was taught in C#.",
-			"references": []
-		},
-		{
-			"company": "FutureGames Skellefteå",
-			"position": "Substitute Teacher / Guest Lecturer",
-			"timespan": {
-				"start": "Sep 2022",
-				"end": "Sep 2022"
-			},
-			"description": "Held 2 lectures on the subject of shader programming and one lecture on the subject of A* pathfinding. The lectures were held in English.",
+			"position": "Teacher (Programming)",
+			"description": "Taught a 5-week course on <b>datastructures & algorithms</b> for a class of ~50 students. The course was primarily aimed at beginners and <b>taught in C#</b>.",
+			"secondPosition": "Substitute Teacher <br>(Shaders & Pathfinding)",
+			"secondDescription": "Held two lectures on the subject of shader programming and one lecture on the subject of A* pathfinding. All lectures were held in English.",
 			"references": []
 		},
 		{
@@ -54,12 +70,14 @@
 				"start": "Jan 2022",
 				"end": "Jun 2022"
 			},
-			"description": "Worked on <i>\"Ghost Signal: A Stellaris Game\"</i>, a VR game made in Unity.",
+			"description": "Worked on <b><i>\"Ghost Signal: A Stellaris Game\"</i></b> (Unity), a VR game made in Unity. I implemented <b>3D obstacle avoidance</b> for enemy AI and a <b>modular cosmetics system</b> that allowed visual customization of the player ship based on selected upgrades.",
 			"references": [
 				{
-					"name": "Jakob Olofsson (Lead Programmer, Mentor)",
+					"name": "Jakob Olofsson",
 					"position": "Lead Programmer",
-					"linkedIn": "https://www.linkedin.com/in/jakob-olofsson/"
+					"contact": {
+						"linkedIn": "https://www.linkedin.com/in/jakob-olofsson/"
+					}
 				}
 			]
 		},
@@ -70,12 +88,14 @@
 				"start": "Jun 2020",
 				"end": "Aug 2020"
 			},
-			"description": "A small indie game studio based in Umeå. I helped implement character controls for a 2.5D space exploration game made in Unity.",
+			"description": "A small indie game studio based in Umeå. I implemented character controls for a 2.5D space exploration game made in Unity.",
 			"references": [
 				{
-					"name": "Per Fransson (COO)",
+					"name": "Per Fransson",
 					"position": "COO",
-					"linkedIn": "https://www.linkedin.com/in/perfransson/"
+					"contact": {
+						"linkedIn": "https://www.linkedin.com/in/perfransson/"
+					}
 				}
 			]
 		}
@@ -92,7 +112,7 @@
 		},
 		{
 			"school": "NTI Gymnasiet, Umeå",
-			"degree": "Technical college graduate (Gymnasieingenjör)",
+			"degree": "Technical College Graduate (Gymnasieingenjör)",
 			"field": "Programming / Software Development",
 			"timespan": {
 				"start": "Aug 2019",
@@ -101,7 +121,7 @@
 		},
 		{
 			"school": "NTI Gymnasiet, Umeå",
-			"degree": "High school graduate (Gymnasieexamen)",
+			"degree": "High School Graduate (Gymnasieexamen)",
 			"field": "Technology",
 			"timespan": {
 				"start": "Aug 2016",
@@ -115,12 +135,15 @@
 	],
 	"programmingLanguages": [
 		"C#",
+		"HLSL",
+		"ShaderLab",
 		"GDScript",
 		"Lua",
 		"Java",
 		"Python",
 		"Javascript",
-		"Typescript"
+		"Typescript",
+		"GO"
 	],
 	"gameEngines": [
 		"Unity",
@@ -128,19 +151,26 @@
 		"LÖVE",
 		"PICO-8"
 	],
+	"systemsAndServices": [
+		"Git",
+		"Photon Quantum",
+		"Amazon Web Services (AWS)",
+		"Steamworks API",
+		"Firebase",
+		"PlayFab",
+		"Node.js"
+	],
 	"skills": [
 		"Realtime Game Logic",
 		"System Design & Implementation",
 		"Optimization",
 		"Pathfinding",
-		"Shaders",
-		"Amazon Web Services (AWS)",
-		"Git"
+		"Shaders"
 	],
 	"contact": [
 		{
-			"text": "digitalmoleguy@gmail.com",
-			"url": "https://digitalmoleguy@gmail.com"
+			"text": "wille.pilquist@gmail.com",
+			"url": "https://wille.pilquist@gmail.com"
 		},
 		{
 			"text": "LinkedIn",
@@ -149,8 +179,8 @@
 	],
 	"links": [
 		{
-			"text": "Portfolio (Somewhat outdated)",
-			"url": "https://docs.google.com/document/d/1xCcDn1TiYZZCbiKZtvmvej2U7AYeIVkkRqeB3TTLV8A/edit?usp=sharing"
+			"text": "Portfolio",
+			"url": "http://127.0.0.1:5500/portfolio.html"
 		}
 	]
 }

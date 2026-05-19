@@ -4,6 +4,8 @@
 			"name": "HELLSPRINT",
 			"role": "Solo Project",
 			"description": "A momentum-based, first-person speedrunner inspired by classic FPS games like Quake, Doom and Unreal Tournament.",
+			"imageWidth": 1280,
+			"imageHeight": 960,
 			"technologies": [
 				"Godot",
 				"GDScript",
@@ -30,6 +32,8 @@
 			"name": "HOOJA (Official Mobile Game)",
 			"role": "Programmer, General Developer",
 			"description": "An endless runner made in collaboration with the hit Swedish artist HOOJA.",
+			"imageWidth": 2560,
+			"imageHeight": 1440,
 			"technologies": [
 				"Unity",
 				"PlayFab",
@@ -51,6 +55,8 @@
 			"name": "IRON EVIL",
 			"role": "Lead Programmer, Designer",
 			"description": "A roguelite where you traverse a factory run by an evil corporation, equip yourself with the best of parts (that hardly have any defects!) and fight your way to the end. However, the parts you don't equip the factory applies elsewhere...",
+			"imageWidth": 1920,
+			"imageHeight": 1080,
 			"technologies": [
 				"Unity",
 				"C#",
@@ -73,6 +79,8 @@
 			"name": "Sutarabu",
 			"role": "Solo Project",
 			"description": "An arcade shoot-em-up. It features fast-paced action, colorful graphics, and a catchy soundtrack.",
+			"imageWidth": 1600,
+			"imageHeight": 900,
 			"technologies": [
 				"Unity",
 				"C#"
@@ -93,6 +101,8 @@
 			"name": "CyberBlitz",
 			"role": "Programmer, UX Design",
 			"description": "School project. Online multiplayer strategy game made in Unity. Of my contributions I would like to highlight the movement path UI, aim-cones and the server-side round-simulation.",
+			"imageWidth": 1600,
+			"imageHeight": 867,
 			"technologies": [
 				"Unity",
 				"Node.js",
@@ -101,7 +111,7 @@
 			"links": [
 				{
 					"label": "Trailer",
-					"url": "https://www.youtube.com/watch?v=0g1v2a3b4c5"
+					"url": "https://www.youtube.com/watch?v=tfRjrvGMCB4"
 				}
 			],
 			"images": [
@@ -114,6 +124,8 @@
 			"name": "Impulse Charge",
 			"role": "Solo Project",
 			"description": "Anti-Gravity racing game made in Unity. The game is a mix between F-Zero and Wipeout.",
+			"imageWidth": 1600,
+			"imageHeight": 846,
 			"technologies": [
 				"Unity"
 			],

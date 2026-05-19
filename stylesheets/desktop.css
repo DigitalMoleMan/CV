@@ -22,10 +22,6 @@
 }
 
 
-.mobile-only {
-	display: none;
-}
-
 @media screen and (max-width: 1000px) {
 
 	::-webkit-scrollbar-track {
@@ -77,15 +73,6 @@ main {
 	width: 18rem;
 
 	text-align: right;
-}
-
-.item-object {
-	display: inline-block;
-	width: 100%;
-	margin: 0.5rem;
-	padding: 1rem;
-	border-radius: 1rem;
-	background-color: #00000033;
 }
 
 .item-content {

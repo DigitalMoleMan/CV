@@ -1,0 +1,60 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; }
+
+h1, h2, h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h4, h5, h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+p {
+	margin: 0 0 10px;
+}
+
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #23527c;
+	text-decoration: underline;
+}
+
+ul,
+ol {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+ul ul, ol ul,
+ul ol, ol ol {
+	margin-bottom: 0;
+}

@@ -33,7 +33,6 @@
 				{
 					"name": "Sofia Lindh",
 					"position": "Producer",
-					"linkedIn": "https://www.linkedin.com/in/sofia-lindh/",
 					"contact": {
 						"linkedIn": "https://www.linkedin.com/in/sofia-lindh/",
 						"email": "sofia@iiixxiproduction.com"
@@ -42,7 +41,6 @@
 				{
 					"name": "Fredrik Larsson",
 					"position": "Manager",
-					"linkedIn": "https://www.linkedin.com/in/fredriklarsson87/",
 					"contact": {
 						"linkedIn": "https://www.linkedin.com/in/fredriklarsson87/",
 						"email": "larsson.fredrik1987@gmail.com",
@@ -170,17 +168,11 @@
 	"contact": [
 		{
 			"text": "wille.pilquist@gmail.com",
-			"url": "https://wille.pilquist@gmail.com"
+			"url": "mailto:wille.pilquist@gmail.com"
 		},
 		{
 			"text": "LinkedIn",
 			"url": "https://www.linkedin.com/in/wille-pilquist-79bb1a236/"
-		}
-	],
-	"links": [
-		{
-			"text": "Portfolio",
-			"url": "http://127.0.0.1:5500/portfolio.html"
 		}
 	]
 }

@@ -12,11 +12,9 @@
 			background-color: #050714;
 		}
 	</style>
-	<!--import bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel=" stylesheet" href="stylesheets/main.css">
-	<link rel="stylesheet" href="stylesheets/desktop.css" media="screen and (min-width: 760px)">
-	<link rel="stylesheet" href="stylesheets/mobile.css" media="screen and (max-width: 760px)">
+	<link rel="preload" as="image" href="img/wille_new_small.jpg" fetchpriority="high">
+	<link rel="preload" href="stylesheets/main.css" as="style">
+	<link rel="stylesheet" href="stylesheets/main.css">
 </head>
 
 <body>
@@ -25,7 +23,8 @@
 
 			<div id="profile-container">
 
-				<img src="img/wille_new.jpg" alt="Profile picture" id="profile-picture">
+				<img src="img/wille_new_small.jpg" alt="Profile picture" id="profile-picture" fetchpriority="high"
+					width="256" height="256">
 				<div id="name-container">
 					<h1>Wille Pilquist</h1>
 					<h2>Game Developer</h2>
@@ -39,7 +38,8 @@
 
 	</main>
 	<div id="background-pattern" class="background-pattern"></div>
-	<script src="portfolio.js"></script>
+	<script src="utils.js" defer></script>
+	<script src="portfolio.js" defer></script>
 </body>
 
 </html>

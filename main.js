@@ -11,8 +11,9 @@ fetch(DATA_PATH)
 		addMainContent(data);
 		addInfoLists(data);
 
-		//set the height of the background pattern to the height of the entire page
-		document.getElementById("background-pattern").style.height = `${document.documentElement.scrollHeight}px`;
+		requestAnimationFrame(() => {
+			document.getElementById("background-pattern").style.height = `${document.documentElement.scrollHeight}px`;
+		});
 	});
 
 function addMainContent(data) {
@@ -39,70 +40,9 @@ function addInfoLists(data) {
 	addBasicList(infoListsDiv, data.skills, "Standout Skills");
 	infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
 	addContactInfo(infoListsDiv, data.contact, "Contact");
-	//infoListsDiv.appendChild(SEPARATOR_HORIZONTAL.cloneNode());
-	//addContactInfo(infoListsDiv, data.links, "Links");
 
 	document.getElementById("main-left").appendChild(infoListsDiv);
 }
-
-function createMainContentList(mainDiv, headerText) {
-	const header = createHeader(headerText);
-	const card = CONTENT_CARD.cloneNode();
-	const list = createContentList();
-
-	mainDiv.appendChild(header);
-	mainDiv.appendChild(card);
-	card.appendChild(list);
-
-	return list;
-}
-
-
-function formatTimespan(timespan) {
-	const { start, end } = timespan;
-	switch (end) {
-		case start: return start;
-		case "Present": return `${start} - <b>${end}</b>`;
-		default: return `${start} - ${end}`;
-	}
-}
-
-function createHeader(text) {
-	const header = document.createElement("h3");
-	header.classList.add("major-header");
-	header.textContent = text;
-	return header;
-}
-
-function createContentCard() {
-	const card = document.createElement("div");
-	card.classList.add("content-card");
-	return card;
-}
-
-function createContentList() {
-	const list = document.createElement("div");
-	list.classList.add("major-content-list");
-	return list;
-}
-
-
-
-
-
-function createInfoListsDiv() {
-	const infoListsDiv = document.createElement("div");
-	infoListsDiv.id = "info-lists";
-	return infoListsDiv;
-}
-
-function createSeparator() {
-	const separator = document.createElement("div");
-	separator.classList.add("separator-horizontal");
-	return separator;
-}
-
-
 
 function addBasicList(parent, items, label) {
 	const div = document.createElement("div");
@@ -127,8 +67,6 @@ function addBasicList(parent, items, label) {
 	parent.appendChild(div);
 }
 
-
-
 function addContactInfo(infoDIv, contact, label) {
 	const div = document.createElement("div");
 	div.classList.add("skill-list");
@@ -151,8 +89,6 @@ function addContactInfo(infoDIv, contact, label) {
 
 	infoDIv.appendChild(div);
 }
-
-
 
 function createExperience(parent, experience) {
 	experience.forEach(({ company, position, description, references, timespan, secondPosition, secondDescription }) => {
@@ -226,8 +162,6 @@ function createReference(reference) {
 		container.appendChild(contactList);
 
 	}
-
-	//container.appendChild(mainLine);
 
 	return container;
 }

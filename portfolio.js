@@ -19,81 +19,13 @@ function addMainContent(data) {
 	const mainContent = document.createElement("div");
 	mainContent.id = "main-content";
 
-
-	//
-
-	const backLink = document.createElement("a");
-	backLink.classList.add("button-link", "bright-link");
-	backLink.textContent = "< Back to CV";
-	backLink.href = "index.html";
-	//mainContent.appendChild(backLink);
-
-
 	createExperience(createMainContentList(mainContent, "Portfolio"), data.projects);
 
 	document.getElementById("main-full").appendChild(mainContent);
 }
 
-function createMainContentList(mainDiv, headerText) {
-	const header = createHeader(headerText);
-	const card = CONTENT_CARD.cloneNode();
-	const list = createContentList();
-
-	mainDiv.appendChild(header);
-	mainDiv.appendChild(card);
-	card.appendChild(list);
-
-	return list;
-}
-
-
-function formatTimespan(timespan) {
-	const { start, end } = timespan;
-	switch (end) {
-		case start: return start;
-		case "Present": return `${start} - <b>${end}</b>`;
-		default: return `${start} - ${end}`;
-	}
-}
-
-function createHeader(text) {
-	const header = document.createElement("h3");
-	header.classList.add("major-header");
-	header.textContent = text;
-	return header;
-}
-
-function createContentCard() {
-	const card = document.createElement("div");
-	card.classList.add("content-card");
-	return card;
-}
-
-function createContentList() {
-	const list = document.createElement("div");
-	list.classList.add("major-content-list");
-	return list;
-}
-
-
-
-
-
-function createInfoListsDiv() {
-	const infoListsDiv = document.createElement("div");
-	infoListsDiv.id = "info-lists";
-	return infoListsDiv;
-}
-
-function createSeparator() {
-	const separator = document.createElement("div");
-	separator.classList.add("separator-horizontal");
-	return separator;
-}
-
-
 function createExperience(parent, experience) {
-	experience.forEach(({ name, role, description, technologies, links, images }) => {
+	experience.forEach(({ name, role, description, technologies, links, images, imageWidth, imageHeight }) => {
 		const divItem = document.createElement("div");
 		divItem.classList.add("item");
 
@@ -103,7 +35,7 @@ function createExperience(parent, experience) {
         <h4 class="item-subtitle">${role}</h4>
         <div class="item-description">${description}</div>
 		${createLinkContainer(links).outerHTML}
-		${createImageContainer(images).outerHTML}
+		${createImageContainer(images, name, imageWidth, imageHeight).outerHTML}
       </div>
     `;
 
@@ -128,15 +60,17 @@ function createLinkContainer(links) {
 	return container;
 }
 
-function createImageContainer(images) {
+function createImageContainer(images, projectName, imageWidth, imageHeight) {
 	const container = document.createElement("div");
 	container.classList.add("item-images");
 
 	images.forEach((image) => {
 		const img = document.createElement("img");
 		img.classList.add("item-image");
+		img.width = imageWidth;
+		img.height = imageHeight;
 		img.src = image;
-		img.alt = "Project Image";
+		img.alt = `${projectName} screenshot`;
 
 		img.addEventListener('load', handleImageLoad);
 
